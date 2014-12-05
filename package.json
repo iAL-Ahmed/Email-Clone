@@ -1,0 +1,12 @@
+{
+  "name": "Email-clone",
+  "version": "0.0.1",
+  "dependencies": {
+      "angular": "^1.2.23",
+      "angular-ui-router": "~0.2.11"
+    },
+  "ignore": [ 
+    "**/.*",
+    "client/bower_components"
+  ]
+}
