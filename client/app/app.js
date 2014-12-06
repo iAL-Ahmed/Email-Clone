@@ -3,13 +3,18 @@ angular.module('email_app', [
 	])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-	$urlRouterProvider.otherwise(); //define initiail load and fallback url
+	$urlRouterProvider.otherwise('inbox'); //define initiail load and fallback url
 
 	$stateProvider //to be definedS
-		.state('state', {
-			url: '/state',
-			templateUrl: 'app/ something...',
-			controller: 'controller name'
+		.state('inbox', {
+			url: '/inbox',
+			templateUrl: 'app/inbox/inbox.tpl.html',
+			controller: 'inboxController'
+		})
+		.state('inboxEmail', {
+			url: '/inbox/email',
+			templateUrl: 'app/inboxEmail/inboxEmail.tpl.html',
+			controller: 'inboxEmailController'
 		})
 
 }])
