@@ -1,5 +1,6 @@
 angular.module('email_app', [
 	'ui.router',
+	'$q',
 	'email_app.inboxController',
 	'email_app.inboxFactory'
 	])
@@ -15,7 +16,7 @@ angular.module('email_app', [
 		})
 		.state('inboxEmail', {
 			url: '/inbox/email/:id',
-			templateUrl: 'inboxEmail/inboxEmail.tpl.html',
+			templateUrl: 'app/inboxEmail/inboxEmail.tpl.html',
 			controller: 'inboxEmailController'
 		})
 
