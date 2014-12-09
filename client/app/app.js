@@ -1,6 +1,5 @@
 angular.module('email_app', [
 	'ui.router',
-	'$q',
 	'email_app.inboxController',
 	'email_app.inboxFactory'
 	])

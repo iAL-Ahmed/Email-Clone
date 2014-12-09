@@ -1,31 +1,29 @@
-angular.module('email_app.inboxFactory', ['$http'])
+angular.module('email_app.inboxFactory', [])
 
-.factory('inboxFactory',['$http', '$state',function($http, $state){
-	var messages = [];
+.factory('InboxFactory',['$http', '$state',function($http, $state){
+	var exports = {};
+	exports.messages= [];
 
-	var gotoMessage = function(id) { //this is only changing the url after the state has changed
+	exports.gotoMessage = function(id) { //this is only changing the url after the state has changed
 		$state.go('inboxEmail', {'id': id})//may need to just replace this with sref
 	}
 
-	var getMessages = function() {
+	exports.getMessages = function() {
 		return $http.get('json/emails.json')
 			.success(function (data){
 				messages = data;
+				console.log(messages);
 			})
 			.error(function (data) {
 				console.log('OMG STUFF WENT WRONG', data);
 			});
-	}
+	}()
 
-	var deleteMessage = function (id, index) {
+	exports.deleteMessage = function (id, index) {
 		messages.splice(index, 1);
 	}
 
-	return {
-		gotoMessage: gotoMessage,
-		getMessages: getMessages,
-		deleteMessage: deleteMessage,
-		messages: messages,
-		stuff: "yeah stuff"
-	}
+	exports.stuff = "yeah stuff";
+
+	return exports;
 }])
