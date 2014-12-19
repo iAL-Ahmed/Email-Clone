@@ -10,6 +10,11 @@ angular.module('email_app.inboxController', [])
 		// 	console.log(InboxFactory.messages);
 		// 	//$scope.emails = InboxFactory.messages;
 		// });
+
+	$scope.goToMessage = InboxFactory.goToMessage;
+	$scope.deleteMessage = InboxFactory.deleteMessage;
+
+	//All other functions should be a straight up call.
 	InboxFactory.getMessages
 		.then( function(result){
 			InboxFactory.messages = result;

@@ -4,7 +4,7 @@ angular.module('email_app.inboxFactory', [])
 	var exports = {};
 	exports.messages= [];
 
-	exports.gotoMessage = function(id) { //this is only changing the url after the state has changed
+	exports.goToMessage = function(id) { //this is only changing the url after the state has changed
 		$state.go('inboxEmail', {'id': id})//may need to just replace this with sref
 	}
 
