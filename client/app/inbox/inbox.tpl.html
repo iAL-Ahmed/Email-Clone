@@ -1,5 +1,14 @@
 <div>
 	{{title}}
-	<div ng-click="getMessages()">{{emails}}</div>
-	<span ui-sref="inboxEmail({id: 'thing'})"> go places</span>
+	<!-- <div ng-click="getMessages()">{{emails}}</div> -->
+	<!-- ng-repeat for messages array -->
+	<ul>
+		<li ng-repeat="email in emails">
+			<span ng-click="goToMessage(email.id)">
+				email {{email}}
+				<!-- <span ui-sref="inboxEmail({id: '10824581'})"> go places</span>  -->
+			</span>
+		</li>
+	</ul>
+	<!-- wrap this in a ng-click and have it call a function to assign id then invoking state.go. -->
 </div>

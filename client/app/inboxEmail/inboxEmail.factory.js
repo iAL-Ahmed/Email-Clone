@@ -1,8 +1,9 @@
 
 angular.module('email_app.inboxEmailFactory', [])
-	.factory('inboxEmailFactory', ['$http', function($http){
+	.factory('InboxEmailFactory', ['$http', function($http){
 		var exports = {};
 
+		exports.stuffyStuff = "inboxEmail stuff";
 		exports.message = {};
 
 		exports.reply = function(message) {
@@ -12,8 +13,9 @@ angular.module('email_app.inboxEmailFactory', [])
 		};
 
 		exports.getMessage = function(params) {
+			console.log(params);
 			if(params.id) {
-				$http.get('json/message/' + params.id + '.json')
+				return $http.get('json/message/' + '10824581' + '.json') //params.id
 					.success(function(data) {
 						console.log("Message recieved!", data)
 					})
@@ -24,4 +26,4 @@ angular.module('email_app.inboxEmailFactory', [])
 		};
 
 		return exports;
-	});
+	}]);

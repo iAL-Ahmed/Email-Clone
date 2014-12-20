@@ -1,7 +1,9 @@
 angular.module('email_app', [
 	'ui.router',
 	'email_app.inboxController',
-	'email_app.inboxFactory'
+	'email_app.inboxFactory',
+	'email_app.inboxEmailController',
+	'email_app.inboxEmailFactory'
 	])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
