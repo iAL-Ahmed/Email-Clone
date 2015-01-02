@@ -9,5 +9,16 @@
 		{{message.content}}
 	</div>
 
-	
+	<span ng-click="replyClick = !replyClick">
+		Reply
+	</span>
+
+	<div ng-init="replyClick = false" ng-show="replyClick">
+		<textarea ng-model="response"; placeholder="Enter a response.";></textarea>
+		<span ng-click="send()">Send</span>
+	</div>
+
+
+
+
 </div>

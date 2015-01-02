@@ -12,8 +12,8 @@ angular.module('email_app.inboxFactory', [])
 	exports.getMessages = function() {
 		return $http.get('json/emails.json')
 			.success(function (data){
-				messages = data;
-				console.log(messages);
+				// messages = data; //not needed as is resolved in controller
+				// console.log(messages);
 			})
 			.error(function (data) {
 				console.log('OMG STUFF WENT WRONG', data);

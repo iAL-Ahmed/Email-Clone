@@ -15,7 +15,9 @@
 	    <th>Subject</th>
 	    <th>Date</th>
 	  </tr>
-	  <tr ng-repeat="email in emails | filter:search">
+	  
+	  <!-- the filter is whatever is plugged into the input on line 9 -->
+	  <tr ng-repeat="email in emails | filter:search"> 
 	    <td ui-sref="inboxEmail({id: email.id})">{{email.from}}</td>
 	    <td>{{email.subject}}</td>
 	    <td>{{email.date}}</td>
