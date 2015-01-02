@@ -15,9 +15,10 @@ angular.module('email_app.inboxEmailFactory', [])
 		exports.getMessage = function(params) {
 			console.log(params);
 			if(params.id) {
-				return $http.get('json/message/' + '10824581' + '.json') //params.id
+				return $http.get('json/message/' + params.id + '.json') //params.id
 					.success(function(data) {
-						console.log("Message recieved!", data)
+						console.log("Message recieved!", data);
+						exports.message = data;
 					})
 					.error(function(data) {
 						console.log("Error getting message!")

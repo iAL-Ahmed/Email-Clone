@@ -1,3 +1,13 @@
 <div>
-{{stuffyStuff}}
+	<div>
+		{{message.from}}
+	</div>
+	<div>
+		{{message.subject}}
+	</div>
+	<div ng-bind-html="messageCont">
+		{{message.content}}
+	</div>
+
+	
 </div>

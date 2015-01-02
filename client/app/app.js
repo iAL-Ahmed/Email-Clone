@@ -7,7 +7,7 @@ angular.module('email_app', [
 	])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-	$urlRouterProvider.otherwise('inbox'); //define initiail load and fallback url
+	$urlRouterProvider.otherwise('inbox'); //define initial load and fallback url
 
 	$stateProvider //to be defined
 		.state('inbox', {
