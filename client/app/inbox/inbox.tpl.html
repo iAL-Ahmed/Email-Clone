@@ -4,13 +4,18 @@
 		<span></span>
 	</div>
 
+<!-- the ng-model is basically a "random name.the part of data you want to search" so search.from. Search takes the place of email on line 18-->
+	<div>
+ 		<input ng-model="search.from"; placeholder="search"></input> 
+	</div>
+
 	<table style="width:100%; text-align: left">
 	  <tr>
 	    <th>From</th>
 	    <th>Subject</th>
 	    <th>Date</th>
 	  </tr>
-	  <tr ng-repeat="email in emails">
+	  <tr ng-repeat="email in emails | filter:search">
 	    <td ui-sref="inboxEmail({id: email.id})">{{email.from}}</td>
 	    <td>{{email.subject}}</td>
 	    <td>{{email.date}}</td>
