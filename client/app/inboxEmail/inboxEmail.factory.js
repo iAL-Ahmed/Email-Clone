@@ -6,7 +6,7 @@ angular.module('email_app.inboxEmailFactory', [])
 		exports.stuffyStuff = "inboxEmail stuff";
 		exports.message = {};
 
-		exports.reply = function(message) {
+		exports.send = function(message) {
 			if(message) {
 				console.log("Reply: " + message) //this will need to make a query to the server which places this email in the resipients inbox
 			}

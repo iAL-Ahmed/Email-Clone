@@ -1,10 +1,10 @@
 angular.module('email_app.inboxEmailController', [])
 
 .controller('inboxEmailController', ['$scope', '$stateParams', '$sce', 'InboxEmailFactory', function($scope, $stateParams, $sce, InboxEmailFactory) {
-	$scope.reply = InboxEmailFactory.reply;
+	$scope.reply = InboxEmailFactory.reply; //may not need this 
 	$scope.reponse = "";
 	$scope.send = function(){
-		console.log($scope.response);
+		InboxEmailFactory.send($scope.response) //move response var to factory
 	}
 
 	$scope.stuffyStuff = InboxEmailFactory.stuffyStuff;

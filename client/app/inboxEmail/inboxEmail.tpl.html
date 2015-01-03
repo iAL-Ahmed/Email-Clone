@@ -15,8 +15,10 @@
 
 	<div ng-init="replyClick = false" ng-show="replyClick">
 		<textarea ng-model="response"; placeholder="Enter a response.";></textarea>
-		<span ng-click="send()">Send</span>
+		<span ng-click="send(); sendClick = !sendClick; replyClick = false;">Send</span>
 	</div>
+
+	<div ng-init="sendClick = false"; ng-show="sendClick">Reply sent!</div>
 
 
 
