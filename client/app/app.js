@@ -3,7 +3,9 @@ angular.module('email_app', [
 	'email_app.inboxController',
 	'email_app.inboxFactory',
 	'email_app.inboxEmailController',
-	'email_app.inboxEmailFactory'
+	'email_app.inboxEmailFactory',
+	'email_app.composeController',
+	'email_app.composeFactory',
 	])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
@@ -19,6 +21,11 @@ angular.module('email_app', [
 			url: '/inbox/email/:id',
 			templateUrl: 'app/inboxEmail/inboxEmail.tpl.html',
 			controller: 'inboxEmailController'
+		})
+		.state('compose',{
+			url:'/inbox/compose',
+			templateUrl: 'app/compose/compose.tpl.html',
+			controller: 'composeController'
 		})
 
 }])

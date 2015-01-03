@@ -6,7 +6,7 @@ angular.module('email_app.inboxEmailController', [])
 	$scope.send = function(){
 		InboxEmailFactory.send($scope.response) //move response var to factory
 	}
-
+	////////////////////////////////////////////////// gunna need a delete button soon
 	$scope.stuffyStuff = InboxEmailFactory.stuffyStuff;
 	console.log('state',$stateParams);
 	$scope.message = InboxEmailFactory.message;

@@ -5,9 +5,12 @@
 	</div>
 
 <!-- the ng-model is basically a "random name.the part of data you want to search" so search.from. Search takes the place of email on line 18-->
-	<div>
+	<span>
  		<input ng-model="search.from"; placeholder="search"></input> 
-	</div>
+	</span>
+	<span>
+		<button ui-sref="compose">Compose</button>
+	</span>
 
 	<table style="width:100%; text-align: left">
 	  <tr>
@@ -15,12 +18,12 @@
 	    <th>Subject</th>
 	    <th>Date</th>
 	  </tr>
-	  
+
 	  <!-- the filter is whatever is plugged into the input on line 9 -->
 	  <tr ng-repeat="email in emails | filter:search"> 
 	    <td ui-sref="inboxEmail({id: email.id})">{{email.from}}</td>
 	    <td>{{email.subject}}</td>
-	    <td>{{email.date}}</td>
+	    <td>{{email.date | date:'medium'}}</td>
 	  </tr>
 	</table>
 	<!-- <div ng-click="getMessages()">{{emails}}</div> -->
