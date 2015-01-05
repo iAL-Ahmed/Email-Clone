@@ -12,7 +12,8 @@ angular.module('email_app.inboxEmailController', [])
 	$scope.message = InboxEmailFactory.message;
 
 	InboxEmailFactory.getMessage($stateParams)
-		.then(function(result) {			
+		.then(function(result) {
+		console.log(result);			
 			InboxEmailFactory.message = result.data;
 			$scope.message = InboxEmailFactory.message;
 			$scope.messageCont = $sce.trustAsHtml(InboxEmailFactory.message.content);

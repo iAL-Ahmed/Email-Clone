@@ -1,6 +1,6 @@
 angular.module('email_app.inboxFactory', [])
 
-.factory('InboxFactory',['$http', '$state',function($http, $state){
+.factory('InboxFactory',['$http', '$state', '$templateCache',function($http, $state, $templateCache){
 	var exports = {};
 	exports.messages= [];
 
@@ -10,7 +10,7 @@ angular.module('email_app.inboxFactory', [])
 	}
 
 	exports.getMessages = function() {
-		return $http.get('json/emails.json')
+		return $http.get('http://emailclone.azurewebsites.net/api/emailList')//'127.0.0.1:3000/api/emailList')
 			.success(function (data){
 				// messages = data; //not needed as is resolved in controller
 				// console.log(messages);

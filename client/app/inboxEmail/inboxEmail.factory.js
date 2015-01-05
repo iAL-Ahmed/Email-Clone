@@ -15,12 +15,7 @@ angular.module('email_app.inboxEmailFactory', [])
 		exports.getMessage = function(params) {
 			console.log(params);
 			if(params.id) {
-				return $http.get('json/message/' + params.id + '.json') //params.id
-					// .success(function(data) {
-					// 	console.log("Message recieved!", data);
-					// 	exports.message = data;//////////////////this is not needed in this case because you need to resolve the resolution in the controller.
-					// 	                       //////////////////By resolving this in the controller you basically do the same thing but in the right scope.
-					// })
+				return $http.get('http://emailclone.azurewebsites.net/api/emails/' + params.id)//,{id:'params.id'})//'json/message/' + params.id + '.json') //params.id
 					.error(function(data) {
 						console.log("Error getting message!")
 					});
