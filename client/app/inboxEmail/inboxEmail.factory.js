@@ -15,7 +15,7 @@ angular.module('email_app.inboxEmailFactory', [])
 		exports.getMessage = function(params) {
 			console.log(params);
 			if(params.id) {
-				return $http.get('http://emailclone.azurewebsites.net/api/emails/' + params.id);
+				return $http.get('http://emailclone.azurewebsites.net/api/emails/' + params.id) //'127.0.0.1:3000/api/emails' for local testing
 					.error(function(data) {
 						console.log("Error getting message!")
 					});

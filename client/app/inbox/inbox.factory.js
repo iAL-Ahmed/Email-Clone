@@ -10,17 +10,13 @@ angular.module('email_app.inboxFactory', [])
 	}
 
 	exports.getMessages = function() {
-		return $http.get('http://emailclone.azurewebsites.net/api/emailList')//'127.0.0.1:3000/api/emailList')
-			.success(function (data){
-				// messages = data; //not needed as is resolved in controller
-				// console.log(messages);
-			})
+		return $http.get('http://emailclone.azurewebsites.net/api/emailList')//'127.0.0.1:3000/api/emailList' for local testing
 			.error(function (data) {
 				console.log('OMG STUFF WENT WRONG', data);
 			});
 	}()
 
-	exports.deleteMessage = function (id, index) {
+	exports.deleteMessage = function (id, index) { //this is a local solution and should be retooled for server
 		messages.splice(index, 1);
 	}
 
